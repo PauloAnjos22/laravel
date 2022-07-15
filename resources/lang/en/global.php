@@ -131,7 +131,7 @@ return [
     'due_date'                             => 'Due date',
     'edit_calendar_source'                 => 'Edit Calendar Source',
     'email_greet'                          => 'Equipe Villagro',
-    'email_line1'                          => 'You are receiving this email because we received a password reset request for your account.',
+    'email_line1'                          => 'Você está recebendo este e-mail porque recebemos uma solicitação de redefinição de senha para sua conta.',
     'email_line2'                          => 'If you did not request a password reset, no further action is required.',
     'email_regards'                        => 'Saudações',
     'end_time'                             => 'End time',

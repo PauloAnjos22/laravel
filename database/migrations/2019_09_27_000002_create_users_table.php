@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             
             $table->string('cnpj')->nullable();
 
-            $table->string('password');
+            $table->string('password')->nullable();
 
             $table->string('remember_token')->nullable();
 

@@ -57,13 +57,6 @@ class User extends Authenticatable
         $this->attributes['email_verified_at'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 
-    // public function setPasswordAttribute($input)
-    // {
-    //     if ($input) {
-    //         $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
-    //     }
-    // }
-
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPassword($token));
@@ -85,41 +78,19 @@ class User extends Authenticatable
         $this->two_factor_expires_at = now()->addMinutes(10);
         $this->save();
     }
-    // public function generateRandomPassword() //envio de senha randomica para o usuario
-    // {        
-    //     $this->password_token = rand(100000, 999999);
-    //     $this->save();
-    // }
-    // public function generateRandomPassword() //envio de senha randomica para o usuario
-    // {   
-    //     $password = rand(100000, 999999);
-    //     $this->password =  Hash::make($password);
-    //     $this->save();
-    //     return $password;
-    // }
+
     function generateRandomPassword($qtyCaraceters = 8)
 {
-    //Letras minúsculas embaralhadas
     $smallLetters = str_shuffle('abcdefghijklmnopqrstuvwxyz');
- 
-    //Letras maiúsculas embaralhadas
     $capitalLetters = str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
- 
-    //Números aleatórios
     $numbers = (((date('Ymd') / 12) * 24) + mt_rand(800, 9999));
     $numbers .= 1234567890;
- 
-    //Caracteres Especiais
     $specialCharacters = str_shuffle('!@#$%*-');
  
-    //Junta tudo
     $characters = $capitalLetters.$smallLetters.$numbers.$specialCharacters;
- 
-    //Embaralha e pega apenas a quantidade de caracteres informada no parâmetro
     $password = substr(str_shuffle($characters), 0, $qtyCaraceters);
  
-    //Retorna a senha
-    $this->password =  Hash::make($password);
+    $this->password = Hash::make($password);
     $this->save();
     return $password;
 }
@@ -135,4 +106,5 @@ class User extends Authenticatable
         $this->two_factor_expires_at = null;
         $this->save();
     }
+
 }

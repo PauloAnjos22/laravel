@@ -58,11 +58,23 @@ class HistoricsController extends Controller
 
             if(!isset($arrLogins)) 
                 $arrLogins = array();
-        
-            $logados = DB::table('historics')->select('email', 'name', 'last_login_at')->get();
-            array_push($arrLogins, $logados);
-            return view('admin.historics.show', ['logado' => $arrLogins]);
+                $nameUser = array();
+                //separo toda a url e pego somente a parte final com o id
+                $url = str_replace("admin/historics/", "", $_SERVER["REQUEST_URI"]);
+                //$url fica com o valor de /id, portanto é necessário tirar a /
+                $url = explode("/", $url);
 
+                //pego da tabela o nome com o id identico ao recebido na url e passo esse nome pra variavel $lw
+                $usuario = DB::table('historics')->select('name')->where('id', $url[1])->get();
+                array_push($nameUser , $usuario);
+                $lw = json_decode($nameUser[0], true);
+                // var_dump($lw);
+
+                //seleciono na tabela todos os names iguais ao nome da variavel $lw
+                $logados = DB::table('historics')->select('email', 'name', 'last_login_at', 'id')->where('name',  $lw)->orderBy('id', 'DESC')->limit('2')->get();
+                array_push($arrLogins, $logados);
+                $ls = json_decode($arrLogins[0], true);
+                return view('admin.historics.show', ['logado' => $ls]);
     }
 
     /**

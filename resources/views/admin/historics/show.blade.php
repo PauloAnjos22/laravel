@@ -10,31 +10,30 @@
         <div class="table-responsive">
             <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                 <thead>
-                    <tr>
+                <tr>
                         <th width="10">
-
+                            {{ trans('Usuário') }}
                         </th>
-                        <th>
-                            {{ trans('cruds.historic.fields.last_login_at') }}
+                        <th width="10">
+                            {{ trans('Email') }}
+                        </th>
+                        <th width="10">
+                            {{ trans('Ultimo Login') }}
                         </th>
                         
-                        <th>
-                            &nbsp;
-                        </th>
                     </tr>
                 </thead>
                 <tbody>
                    @foreach($logado as $log)
-                        <tr>
+                 <tr>
                             <td>
-
+                                {{ $log['name'] }}
                             </td>
                             <td>
-                                {{ $log }}
+                                {{ $log['email'] }}
                             </td>
-                            
                             <td>
-
+                                {{ $log['last_login_at'] }}
                             </td>
 
                         </tr>

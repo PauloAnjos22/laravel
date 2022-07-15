@@ -6,6 +6,10 @@ class HomeController
 {
     public function index()
     {
-        return view('home');
+        $user = \Auth::user()->name;
+        $acesso = \Auth::user()->last_login_at;
+        $acesso = date("d/m/Y H:i", strtotime($acesso));
+        return view('home', ['nome' => $user, 'login' => $acesso]);
+        
     }
 }

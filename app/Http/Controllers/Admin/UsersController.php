@@ -8,6 +8,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Role;
 use App\User;
+use Hash;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -53,10 +54,10 @@ class UsersController extends Controller
 
     public function update(UpdateUserRequest $request, User $user)
     {
-        $user->update($request->all());
+        $data = $request->all();
+        $data['password'] = bcrypt(($data['password']));
+        $user->update($data);
         $user->roles()->sync($request->input('roles', []));
-
-        return redirect()->route('admin.users.index');
     }
 
     public function show(User $user)

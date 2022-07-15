@@ -36,7 +36,7 @@
             </div>
             <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
                 <label for="password">{{ trans('cruds.user.fields.password') }}</label>
-                <input type="password" id="password" name="password" class="form-control">
+                <input type="password" id="password" name="password" class="form-control"  value="{{ old('password', isset($user) ? $user->password : '') }}" required>
                 @if($errors->has('password'))
                     <em class="invalid-feedback">
                         {{ $errors->first('password') }}
