@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => null,
                 'created_at'     => '2019-09-27 07:11:07',
                 'updated_at'     => '2019-09-27 07:11:07',
+                'ativo'         => '1',
             ],
         ];
 

@@ -17,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\Api\\V1\\Admin\\PermissionsApiController' => $baseDir . '/app/Http/Controllers/Api/V1/Admin/PermissionsApiController.php',
     'App\\Http\\Controllers\\Api\\V1\\Admin\\RolesApiController' => $baseDir . '/app/Http/Controllers/Api/V1/Admin/RolesApiController.php',
     'App\\Http\\Controllers\\Api\\V1\\Admin\\UsersApiController' => $baseDir . '/app/Http/Controllers/Api/V1/Admin/UsersApiController.php',
+    'App\\Http\\Controllers\\Auth\\FirtsLoginController' => $baseDir . '/app/Http/Controllers/Auth/FirtsLoginController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',

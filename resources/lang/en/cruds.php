@@ -49,6 +49,8 @@ return [
             'name_helper'              => '',
             'cnpj'                     => 'CNPJ',
             'cnpj_helper'              =>'',
+            'ativo'                    => 'Ativo',
+            'ativo_helper'             => '',
             'email'                    => 'Email',
             'email_helper'             => '',
             'email_verified_at'        => 'Email verified at',

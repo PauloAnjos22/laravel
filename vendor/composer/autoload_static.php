@@ -556,6 +556,7 @@ class ComposerStaticInit552ca0776b0e698231da522c411bc33b
         'App\\Http\\Controllers\\Api\\V1\\Admin\\PermissionsApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/V1/Admin/PermissionsApiController.php',
         'App\\Http\\Controllers\\Api\\V1\\Admin\\RolesApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/V1/Admin/RolesApiController.php',
         'App\\Http\\Controllers\\Api\\V1\\Admin\\UsersApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/V1/Admin/UsersApiController.php',
+        'App\\Http\\Controllers\\Auth\\FirtsLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/FirtsLoginController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',

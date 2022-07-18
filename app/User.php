@@ -35,6 +35,7 @@ class User extends Authenticatable
         'email',
         'password',
         'cnpj',
+        'ativo',
         'created_at',
         'updated_at',
         'deleted_at',

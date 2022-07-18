@@ -58,6 +58,8 @@ class UsersController extends Controller
         $data['password'] = bcrypt(($data['password']));
         $user->update($data);
         $user->roles()->sync($request->input('roles', []));
+
+        return redirect()->route('admin.users.index');
     }
 
     public function show(User $user)
@@ -80,8 +82,9 @@ class UsersController extends Controller
 
     public function massDestroy(MassDestroyUserRequest $request)
     {
-        User::whereIn('id', request('ids'))->ForceDelete();
 
+        User::whereIn('id', request('ids'))->Update(['ativo' => 0]);
         return response(null, Response::HTTP_NO_CONTENT);
+        
     }
 }
